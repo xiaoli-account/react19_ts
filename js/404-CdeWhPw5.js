@@ -1,0 +1,1 @@
+import{u as r,o as t,ay as i,K as n}from"./react-vendor-rXIa9cI5.js";import{m,h as u}from"./index-CHAdhw0O.js";const h=()=>{const o=r(),s=u("page:home");function e(){o("/workbench/home")}function a(){m(),o("/login")}return t.jsx(i,{status:"404",title:"404",subTitle:"抱歉，您访问的页面不存在。",extra:t.jsx(n,{type:"primary",onClick:s?e:a,children:s?"返回首页":"返回登录"})})};export{h as default};

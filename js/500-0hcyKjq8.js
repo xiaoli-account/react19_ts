@@ -1,0 +1,1 @@
+import{u as a,o as t,ay as e,K as r}from"./react-vendor-rXIa9cI5.js";const i=()=>{const s=a();return t.jsx(e,{status:"500",title:"500",subTitle:"抱歉，服务器出现了错误。",extra:t.jsx(r,{type:"primary",onClick:()=>s(-1),children:"返回"})})};export{i as default};

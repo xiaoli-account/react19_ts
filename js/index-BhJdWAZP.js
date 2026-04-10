@@ -1,1 +1,0 @@
-import{o as e}from"./react-vendor-DVyLv-oW.js";import{n as r,o as t,q as s,t as o,v as u}from"./index-KgLedqe7.js";const l=()=>{const{layoutMode:a}=r();return(()=>{switch(a){case"lee-basic":return e.jsx(t,{});case"lee-sidebar":return e.jsx(u,{});case"lee-top-menu":return e.jsx(o,{});case"lee-plm":return e.jsx(s,{});default:return e.jsx(t,{})}})()};export{l as default};

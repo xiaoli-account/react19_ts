@@ -1,0 +1,1 @@
+import{u as o,o as t,ay as a,K as n}from"./react-vendor-rXIa9cI5.js";import{u as i}from"./index-CHAdhw0O.js";const c=()=>{const e=o(),{resetUserStore:s}=i(),r=()=>{s(),e("/login",{replace:!0})};return t.jsx(a,{status:"403",title:"401",subTitle:"抱歉，您的登录已过期或未授权，请重新登录。",extra:t.jsx(n,{type:"primary",onClick:r,children:"返回登录"})})};export{c as default};

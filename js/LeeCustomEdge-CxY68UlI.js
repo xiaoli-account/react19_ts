@@ -1,0 +1,1 @@
+import{o as g,bi as d,bj as h}from"./react-vendor-rXIa9cI5.js";const m=({id:t,sourceX:e,sourceY:s,targetX:a,targetY:o})=>{const[r]=h({sourceX:e,sourceY:s,targetX:a,targetY:o});return g.jsx(d,{id:t,path:r})};export{m as default};
