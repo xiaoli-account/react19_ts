@@ -1,0 +1,1 @@
+import{u as a,o as t,ay as e,K as r}from"./react-vendor-DVyLv-oW.js";const i=()=>{const s=a();return t.jsx(e,{status:"500",title:"503",subTitle:"抱歉，服务暂时不可用，请稍后再试。",extra:t.jsx(r,{type:"primary",onClick:()=>s(-1),children:"返回"})})};export{i as default};

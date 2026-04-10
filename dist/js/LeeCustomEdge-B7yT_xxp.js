@@ -1,0 +1,1 @@
+import{o as g,bm as m,bn as n}from"./react-vendor-DVyLv-oW.js";const h=({id:t,sourceX:e,sourceY:s,targetX:a,targetY:o})=>{const[r]=n({sourceX:e,sourceY:s,targetX:a,targetY:o});return g.jsx(m,{id:t,path:r})};export{h as default};
