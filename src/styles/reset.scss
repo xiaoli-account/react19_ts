@@ -1,0 +1,615 @@
+/**
+ * CSS Reset Styles
+ * 网页标签重置样式
+ * 基于现代CSS重置最佳实践
+ *
+ * @format
+ */
+
+/* ==================== 基础重置 ==================== */
+/* box-sizing 对所有元素生效（安全） */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* margin 和 padding 只重置没有 class 的元素，避免影响 Tailwind 等 utility 类 */
+*:not([class]),
+*::before:not([class]),
+*::after:not([class]) {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+/* ==================== 滚动条样式 ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color-page);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: var(--text-color-secondary);
+  }
+}
+
+/* Firefox 滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-color-page);
+}
+
+/* ==================== 基础元素重置 ==================== */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: var(--font-size-base);
+  line-height: 1.5715;
+  color: var(--text-color);
+  background-color: var(--bg-color-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==================== 焦点管理 ==================== */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ==================== 文本元素重置 ==================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0.375rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* ==================== 链接样式 ==================== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+
+  &:hover {
+    color: var(--primary-color-hover);
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==================== 列表元素重置 ==================== */
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+ol ol,
+ul ul,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+/* ==================== 文本格式化元素 ==================== */
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--border-color);
+  background-color: var(--bg-color-container);
+  color: var(--text-color-secondary);
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 0.875em;
+  color: var(--text-color-secondary);
+}
+
+mark {
+  padding: 0.125rem 0.25rem;
+  background-color: var(--warning-color);
+  color: var(--text-color);
+  border-radius: 2px;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ==================== 代码元素重置 ==================== */
+pre,
+code,
+kbd,
+samp {
+  font-family:
+    "SF Mono", "Fira Code", "Fira Mono", "Consolas", "Liberation Mono", "Menlo",
+    "Courier New", monospace;
+  font-size: 0.875em;
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+pre {
+  display: block;
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow: auto;
+  background-color: var(--bg-color-container);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+code {
+  font-size: 0.875em;
+  color: var(--error-color);
+  word-wrap: break-word;
+  background-color: var(--bg-color-container);
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+a > code {
+  color: inherit;
+  background-color: transparent;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875em;
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+kbd kbd {
+  padding: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* ==================== 媒体元素重置 ==================== */
+figure {
+  margin: 1rem 0;
+  padding: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875em;
+  color: var(--text-color-secondary);
+  text-align: center;
+}
+
+img > svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+img {
+  border-radius: 0;
+}
+
+/* ==================== 表格元素重置 ==================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: var(--text-color-secondary);
+  text-align: left;
+  font-size: 0.875em;
+  caption-side: bottom;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  font-weight: 600;
+  color: var(--text-color);
+  background-color: var(--bg-color-container);
+  border-top: 1px solid var(--border-color);
+}
+
+thead th {
+  border-bottom: 2px solid var(--border-color);
+}
+
+tfoot th {
+  border-top: 2px solid var(--border-color);
+}
+
+/* ==================== 表单元素重置 ==================== */
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--bg-color-container);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input,
+textarea {
+  padding: 0.5rem 0.75rem;
+}
+
+select {
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+  appearance: none;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: none;
+}
+
+[type="radio"],
+[type="checkbox"] {
+  margin: 0.25rem 0;
+}
+
+/* ==================== 特殊元素重置 ==================== */
+hr {
+  margin: 2rem 0;
+  color: var(--border-color);
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  height: 1px;
+}
+
+hr:not([size]) {
+  height: 1px;
+}
+
+output {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+iframe {
+  border: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==================== 浏览器兼容性 ==================== */
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* ==================== 打印样式 ==================== */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+    color: black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    color: black;
+  }
+
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    border: 1px solid black;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}

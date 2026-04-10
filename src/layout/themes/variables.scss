@@ -1,0 +1,106 @@
+/**
+ * @format
+ *
+ * Lee Layout Themes Variables
+ * 为业务页面提供标准的主题变量，仅供参考
+ * 根据实际项目需求进行调整，或在项目内的公用styles中进行覆盖
+ */
+
+$lee-layout-font-size-base: 14px;
+
+/**
+ * 公用滚动条样式 Mixin
+ *
+ * 该 Mixin 旨在提供跨浏览器的统一滚动条样式定制方案。
+ * 它兼容 WebKit 内核浏览器 (Chrome, Edge, Safari) 和支持标准属性的浏览器 (Firefox)。
+ *
+ * @param $width 滚动条的宽度 (垂直滚动条) 或高度 (水平滚动条)。默认 6px。
+ * @param $thumb-color-light 亮色模式下的滑块颜色。
+ * @param $thumb-hover-color-light 亮色模式下滑块悬停时的颜色。
+ * @param $thumb-color-dark 暗色模式下的滑块颜色。
+ * @param $thumb-hover-color-dark 暗色模式下滑块悬停时的颜色。
+ * @param $track-color 轨道背景颜色。默认透明。
+ */
+@mixin common-scrollbar(
+  $width: 6px,
+  $thumb-color-light: rgba(0, 0, 0, 0.2),
+  $thumb-hover-color-light: rgba(0, 0, 0, 0.4),
+  $thumb-color-dark: rgba(255, 255, 255, 0.2),
+  $thumb-hover-color-dark: rgba(255, 255, 255, 0.4),
+  $track-color: transparent
+) {
+  // =================================================================
+  // 标准属性 (目前主要被 Firefox 支持)
+  // =================================================================
+
+  // 设置滚动条的宽度。
+  // 'auto': 默认宽度; 'thin': 较细的宽度 (对应 $width 较小的情况); 'none': 隐藏。
+  // 注意：Firefox 不支持精确像素值，只能设为 thin。
+  scrollbar-width: thin;
+
+  // 设置滚动条颜色。第一个值为滑块颜色，第二个值为轨道颜色。
+  scrollbar-color: $thumb-color-light $track-color;
+
+  // =================================================================
+  // WebKit 内核属性 (Chrome, Edge, Safari)
+  // =================================================================
+
+  // ::-webkit-scrollbar
+  // 滚动条整体部分，可以设置宽、高、背景色等。
+  // 垂直滚动条受 width 属性影响，水平滚动条受 height 属性影响。
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  // ::-webkit-scrollbar-track
+  // 滚动条轨道，即滑块滚动区域的背景。
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    // 可以添加圆角或阴影，如：
+    // border-radius: $width;
+  }
+
+  // ::-webkit-scrollbar-thumb
+  // 滚动条滑块，即用户可以拖动的部分。
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color-light;
+    border-radius: $width; // 使滑块两端圆润
+    border: 2px solid transparent; // 使用透明边框技巧来模拟滑块与轨道之间的间距 (background-clip 在下面)
+    background-clip: content-box; // 使得背景色只绘制在内容区域，配合 transparent border 实现"悬浮"效果
+    transition: background-color 0.3s; // 为了顺滑的悬停效果 (注意：某些浏览器对伪类 transition 支持不一)
+
+    &:hover {
+      background-color: $thumb-hover-color-light;
+    }
+  }
+
+  // ::-webkit-scrollbar-corner
+  // 边角，即垂直滚动条和水平滚动条交汇的地方。
+  &::-webkit-scrollbar-corner {
+    background-color: $track-color;
+  }
+
+  // =================================================================
+  // 暗色主题适配 (Dark Mode)
+  // =================================================================
+  // 假设 [data-theme="dark"] 属性位于上层元素 (如 html 或 body)。
+  // 使用 [data-theme="dark"] & 选择器嵌套，确保在暗色模式下覆盖颜色。
+
+  [data-theme="dark"] & {
+    // Firefox 标准属性适配
+    scrollbar-color: $thumb-color-dark $track-color;
+
+    // WebKit 滑块适配
+    &::-webkit-scrollbar-thumb {
+      background-color: $thumb-color-dark;
+
+      &:hover {
+        background-color: $thumb-hover-color-dark;
+      }
+    }
+
+    // 如果轨道颜色在暗色模式下也需要变化，可以在此添加
+    // &::-webkit-scrollbar-track { ... }
+  }
+}

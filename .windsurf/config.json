@@ -1,0 +1,46 @@
+{
+  "project": {
+    "name": "react19_ts",
+    "type": "web-application",
+    "framework": "react",
+    "language": "typescript"
+  },
+  "knowledgeBase": {
+    "primary": "src_ai/ai-knowledge/lee-custom-llms-text/llms.txt",
+    "additional": [
+      "src_ai/ai-knowledge/lee-custom-llms-text/llms.full.txt"
+    ]
+  },
+  "codeStyle": {
+    "typescript": {
+      "strict": true,
+      "target": "ES2022"
+    },
+    "eslint": {
+      "enabled": true,
+      "config": ".eslintrc.cjs"
+    },
+    "prettier": {
+      "enabled": true,
+      "config": ".prettierrc"
+    }
+  },
+  "pathAliases": {
+    "@": "./src",
+    "@AI": "./src_ai",
+    "@ai": "./src_ai"
+  },
+  "aiModel": {
+    "default": "gpt-4",
+    "fallback": "claude-3-sonnet"
+  },
+  "codeGeneration": {
+    "maxLines": 500,
+    "targetDirectory": {
+      "small": "src",
+      "large": "src_ai"
+    },
+    "requireTypes": true,
+    "requireTests": false
+  }
+}

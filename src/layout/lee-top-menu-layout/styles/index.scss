@@ -1,0 +1,36 @@
+/**
+ * @format
+ *
+ * Lee Top Menu Layout Styles
+ * 顶部菜单布局样式,样式导出
+ */
+
+@use "./theme/index.scss" as *;
+@use "../../themes/variables.scss" as *;
+
+.lee-topmenu-layout {
+  height: 100vh;
+  overflow: hidden;
+
+  .layout-container {
+    height: 100%;
+  }
+
+  .layout-top-main {
+    height: calc(100vh - var(--lee-topmenu-header-height));
+    overflow: hidden;
+    background: var(--lee-topmenu-light-header-bg);
+    padding-top: var(--lee-topmenu-header-height);
+  }
+
+  .content-wrapper {
+    padding: var(--lee-topmenu-content-padding);
+    height: calc(
+      100vh - var(--lee-topmenu-header-height) - var(
+          --lee-topmenu-breadcrumb-height
+        )
+    );
+    overflow: auto;
+    @include common-scrollbar;
+  }
+}

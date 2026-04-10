@@ -1,0 +1,60 @@
+{
+  "models": [
+    {
+      "title": "GPT-4",
+      "provider": "openai",
+      "model": "gpt-4",
+      "apiKey": ""
+    },
+    {
+      "title": "Claude 3",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet-20240229",
+      "apiKey": ""
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {
+        "docsUrl": "file://./src_ai/ai-knowledge/lee-custom-llms-text/llms.txt"
+      }
+    },
+    {
+      "name": "file",
+      "params": {
+        "files": [
+          "src_ai/ai-knowledge/lee-custom-llms-text/llms.txt",
+          "src_ai/ai-knowledge/lee-custom-llms-text/llms.full.txt"
+        ]
+      }
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit selected code"
+    },
+    {
+      "name": "comment",
+      "description": "Write comments for the selected code"
+    },
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    }
+  ],
+  "allowAnonymousTelemetry": false,
+  "embeddingsProvider": {
+    "provider": "openai",
+    "model": "text-embedding-3-small"
+  }
+}

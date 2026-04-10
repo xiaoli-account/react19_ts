@@ -1,0 +1,80 @@
+/** @format */
+
+// Header 样式
+@use "../styles/index.scss" as *;
+.lee-plm-layout {
+  .layout-header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      div {
+        line-height: 1;
+      }
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      overflow: hidden;
+      gap: 16px;
+
+      .header-right-space {
+        height: 100%;
+        .ant-space-item {
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .header-user {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 4px 10px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: var(--lee-basic-user-menu-bg-hover);
+        }
+
+        .user-avatar {
+          margin-right: 8px;
+        }
+
+        .user-name {
+          font-size: var(--lee-basic-user-menu-font-size);
+          font-weight: var(--lee-basic-user-menu-font-weight);
+          color: var(--lee-basic-user-menu-font-color);
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+// 暗色主题适配
+[data-theme="dark"] {
+  .lee-plm-layout {
+    .layout-header {
+      .header-left {
+        .header-logo {
+          .logo-icon {
+            &:hover {
+              filter: drop-shadow(0 0 1em var(--lee-plm-logo-bg));
+            }
+          }
+        }
+      }
+    }
+  }
+}

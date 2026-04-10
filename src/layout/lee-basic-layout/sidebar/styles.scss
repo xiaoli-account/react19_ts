@@ -1,0 +1,45 @@
+/** @format */
+
+// Sidebar 样式
+@use "../styles/index.scss" as *;
+
+.lee-basic-layout .layout-sidebar {
+  position: relative;
+
+  .layout-menu {
+    border: none;
+    padding: var(--lee-basic-sidebar-padding);
+    .ant-menu-submenu {
+      .ant-menu-item {
+        &.ant-menu-item-selected {
+          background-color: var(--lee-basic-sidebar-menu-selected-bg);
+        }
+      }
+      &.ant-menu-submenu-selected {
+        background-color: var(--lee-basic-sidebar-submenu-selected-bg);
+      }
+    }
+  }
+}
+
+// 暗色主题适配
+[data-theme="dark"] {
+  .lee-basic-layout .layout-sidebar {
+    .layout-menu {
+      .ant-menu-item {
+        &.ant-menu-item-selected {
+          color: var(--lee-basic-sidebar-menu-selected-text);
+        }
+      }
+      .ant-menu-submenu {
+        &.ant-menu-submenu-selected {
+          color: var(--lee-basic-sidebar-menu-selected-text);
+
+          .ant-menu-submenu-title {
+            color: var(--lee-basic-sidebar-submenu-selected-text);
+          }
+        }
+      }
+    }
+  }
+}

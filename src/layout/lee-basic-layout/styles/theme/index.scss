@@ -1,0 +1,15 @@
+/** @format */
+
+@use "./light/index.scss" as *;
+@use "./dark/index.scss" as *;
+
+:root {
+  // 默认亮色主题变量
+  @extend .theme-light;
+}
+
+// 暗色主题变量覆盖
+[data-theme="dark"] {
+  // 暗色主题变量
+  @extend .theme-dark;
+}

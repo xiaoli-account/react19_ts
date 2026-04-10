@@ -1,0 +1,12 @@
+{
+    "react19_ts_config": "项目配置配置文件,用于保证项目正常运行所需的配置信息,请勿修改",
+    "layoutMode": "lee-basic-layout",
+    "theme": "light",
+    "lang": "zh-cn",
+    "权限配置入口": "permission|快速配置权限入口,具体如何配置数据,请参考src/layout/utils/leePermission.ts #L31-69,配置后需要重启服务才能生效",
+    "permission": {
+        "apiWhiteList": [],
+        "pageWhiteList": [],
+        "btnWhiteList": []
+    }
+}

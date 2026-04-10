@@ -1,0 +1,15 @@
+/**
+ * 主题系统统一入口
+ * 导入此文件即可使用所有布局的主题样式配置
+ * 每个布局模式独立管理其主题样式配置与变量配置
+ *
+ * @format
+ */
+
+// 引入所有布局的主题变量配置
+@use "./variables" as *;
+
+// 引入所有布局的主题样式配置
+@use "../lee-basic-layout/styles/index.scss" as *;
+@use "../lee-sidebar-layout/styles/index.scss" as *;
+@use "../lee-top-menu-layout/styles/index.scss" as *;

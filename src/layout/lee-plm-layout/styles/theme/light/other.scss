@@ -1,0 +1,12 @@
+/**
+ * Lee PLM Layout Light Other Variables
+ * 基础布局亮色主题其他变量
+ *
+ * @format
+ */
+
+@use "../common/index.scss" as *;
+
+.light-other-theme {
+  --lee-plm-light-transition: all 0.3s ease-in-out;
+}

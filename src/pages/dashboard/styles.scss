@@ -1,0 +1,426 @@
+/** @format */
+
+.dashboard-container {
+  min-height: 100vh;
+
+  // 用户信息卡片
+  .user-info-card {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    .user-info-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .user-details {
+        flex: 1;
+
+        h2 {
+          margin: 0 0 8px 0;
+          font-size: 24px;
+          font-weight: 500;
+          color: #262626;
+        }
+
+        .user-meta {
+          margin: 0;
+          color: #8c8c8c;
+          font-size: 14px;
+
+          .divider {
+            margin: 0 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // 统计卡片行
+  .statistics-row {
+    margin-bottom: 16px;
+
+    .statistic-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .ant-statistic-title {
+        font-size: 14px;
+        color: #8c8c8c;
+      }
+
+      .ant-statistic-content {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // 快捷菜单卡片
+  .quick-menu-card {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    .quick-menu-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .quick-menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #f5f5f5;
+        transform: translateY(-2px);
+      }
+
+      .menu-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #fff;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .menu-title {
+        font-size: 14px;
+        color: #262626;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 图表行
+  .charts-row {
+    margin-bottom: 16px;
+
+    .chart-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: 100%;
+    }
+  }
+
+  // 信息行（日志和通知）
+  .info-row {
+    margin-bottom: 16px;
+
+    .log-card,
+    .notification-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: 100%;
+
+      .ant-card-body {
+        padding: 16px;
+      }
+    }
+
+    .notification-card {
+      .ant-list-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .notification-time {
+        font-size: 12px;
+        color: #bfbfbf;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  // 项目行（功能介绍和版本）
+  .project-row {
+    .feature-card,
+    .version-card {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: 100%;
+
+      .ant-card-body {
+        padding: 24px;
+      }
+    }
+
+    .feature-card {
+      .feature-content {
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #262626;
+          margin-bottom: 12px;
+        }
+
+        h4 {
+          font-size: 16px;
+          font-weight: 500;
+          color: #262626;
+          margin-top: 20px;
+          margin-bottom: 12px;
+        }
+
+        .feature-description {
+          color: #595959;
+          line-height: 1.8;
+          margin-bottom: 16px;
+        }
+
+        .feature-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 8px 0;
+            color: #595959;
+            line-height: 1.6;
+            font-size: 14px;
+
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 4px;
+              height: 4px;
+              background-color: #1890ff;
+              border-radius: 50%;
+              margin-right: 8px;
+              vertical-align: middle;
+            }
+          }
+        }
+
+        .tech-stack {
+          margin-top: 12px;
+
+          .ant-tag {
+            margin: 4px;
+            padding: 4px 12px;
+            font-size: 13px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+
+    .version-card {
+      .ant-timeline {
+        margin-top: 16px;
+      }
+
+      .version-item {
+        .version-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 8px;
+
+          h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+          }
+        }
+
+        .version-description {
+          color: #595959;
+          line-height: 1.6;
+          margin-bottom: 12px;
+        }
+
+        .version-features {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+
+          .feature-tag {
+            margin: 0;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            background-color: #f0f5ff;
+            border-color: #adc6ff;
+            color: #2f54eb;
+          }
+        }
+      }
+    }
+  }
+
+  // 响应式设计
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .user-info-card {
+      .user-info-content {
+        flex-direction: column;
+        text-align: center;
+
+        .user-details {
+          h2 {
+            font-size: 20px;
+          }
+
+          .user-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .divider {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .quick-menu-item {
+      .menu-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+      }
+
+      .menu-title {
+        font-size: 12px;
+      }
+    }
+
+    .charts-row {
+      .chart-card {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 12px;
+
+    .statistics-row {
+      .ant-col {
+        margin-bottom: 8px;
+      }
+    }
+
+    .project-row {
+      .feature-card,
+      .version-card {
+        .ant-card-body {
+          padding: 16px;
+        }
+      }
+
+      .feature-card {
+        .feature-content {
+          h3 {
+            font-size: 18px;
+          }
+
+          h4 {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 暗色主题支持（预留）
+[data-theme="dark"] {
+  .dashboard-container {
+    background-color: #141414;
+
+    .user-info-card,
+    .statistic-card,
+    .quick-menu-card,
+    .chart-card,
+    .log-card,
+    .notification-card,
+    .feature-card,
+    .version-card {
+      background-color: #1f1f1f;
+      border-color: #303030;
+
+      .ant-card-head {
+        border-color: #303030;
+      }
+    }
+
+    .user-info-content {
+      .user-details {
+        h2 {
+          color: #e8e8e8;
+        }
+
+        .user-meta {
+          color: #8c8c8c;
+        }
+      }
+    }
+
+    .quick-menu-item {
+      &:hover {
+        background-color: #262626;
+      }
+
+      .menu-title {
+        color: #e8e8e8;
+      }
+    }
+
+    .feature-card {
+      .feature-content {
+        h3,
+        h4 {
+          color: #e8e8e8;
+        }
+
+        .feature-description,
+        .feature-list li {
+          color: #bfbfbf;
+        }
+      }
+    }
+
+    .version-card {
+      .version-item {
+        .version-header h4 {
+          color: #e8e8e8;
+        }
+
+        .version-description {
+          color: #bfbfbf;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/** @format */
+
+.reactflow-main {
+  height: 100%;
+  width: 100%;
+}
+
+.reactflow-card {
+  // 确保 Card 有明确的高度
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 200px - 48px); // 根据页面布局调整
+    min-height: 500px;
+  }
+}

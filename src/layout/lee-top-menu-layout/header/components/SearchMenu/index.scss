@@ -1,0 +1,96 @@
+/** @format */
+
+// 组件内部样式
+.lee-topmenu-layout {
+  .header-search-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px;
+
+    .header-search {
+      position: relative;
+      width: 100%;
+      max-width: var(--lee-basic-search-width);
+      height: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      transition: all 0.3s ease;
+
+      .search-icon {
+        font-size: 16px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+        color: var(--lee-topmenu-search-icon-color);
+      }
+
+      .ant-select.search-select {
+        width: var(--lee-basic-search-width) !important;
+        transition: all 0.3s ease;
+        padding-left: 30px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: 0px;
+        color: var(--lee-topmenu-search-text-color);
+
+        .ant-select-selector {
+          background-color: transparent !important;
+          border: none !important;
+          border-bottom: 1px solid var(--lee-basic-search-border) !important;
+          border-radius: 0 !important;
+          padding-left: 34px !important;
+          box-shadow: none !important;
+
+          .ant-select-selection-search {
+            left: 34px !important;
+          }
+
+          .ant-select-selection-placeholder {
+            left: 34px !important;
+          }
+
+          .ant-select-selection-search-input {
+            color: var(--lee-topmenu-search-input-text) !important;
+          }
+
+          &:hover {
+            border-bottom-color: var(
+              --lee-basic-search-border-hover
+            ) !important;
+            background-color: var(--lee-basic-search-bg) !important;
+          }
+        }
+
+        &.ant-select-focused {
+          width: var(--lee-basic-search-width-focus) !important;
+          box-shadow: none !important;
+
+          .ant-select-selector {
+            border-bottom-color: var(
+              --lee-basic-search-border-hover
+            ) !important;
+            background-color: var(--lee-basic-search-bg) !important;
+          }
+        }
+      }
+
+      // 当内部Select聚焦时，父容器扩展
+      &:focus-within {
+        max-width: var(--lee-basic-search-width-focus);
+      }
+    }
+  }
+}
+// 暗色模式适配
+[data-theme="dark"] {
+  .lee-topmenu-layout {
+  }
+}

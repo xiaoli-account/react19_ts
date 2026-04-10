@@ -1,0 +1,63 @@
+/**
+ * Lee Sidebar Layout Light Size Variables
+ * 侧边栏布局亮色主题尺寸变量
+ *
+ * @format
+ */
+
+@use "../common/index.scss" as *;
+
+.light-size-theme {
+  // =========================
+  // 主体布局尺寸 (--lee-sidebar)
+  // =========================
+  --lee-sidebar-header-height: 0px;
+  --lee-sidebar-sidebar-width: 256px;
+  --lee-sidebar-sidebar-collapsed-width: 80px;
+  --lee-sidebar-breadcrumb-height: 50px;
+  --lee-sidebar-tab-height: 35px;
+
+  // =========================
+  // 头部样式 (--lee-sidebar-header)
+  // =========================
+  --lee-sidebar-header-padding: 0 24px;
+
+  // =========================
+  // Logo 样式 (--lee-sidebar-logo)
+  // =========================
+  --lee-sidebar-logo-height: 25px;
+  --lee-sidebar-logo-width: 25px;
+  --lee-sidebar-logo-padding: 0px 30px;
+  --lee-sidebar-logo-margin: 10px;
+  --lee-sidebar-logo-font-size: 15px;
+  --lee-sidebar-logo-font-weight: 600;
+
+  // =========================
+  // 侧边栏样式 (--lee-sidebar-sidebar)
+  // =========================
+  --lee-sidebar-sidebar-padding: 10px 0 20px 0;
+  --lee-sidebar-sidebar-footer-item-height: 40px;
+  --lee-sidebar-sidebar-footer-item-padding: 4px 16px;
+
+  // =========================
+  // 面包屑样式 (--lee-sidebar-breadcrumb)
+  // =========================
+  --lee-sidebar-breadcrumb-padding: 15px 25px 10px 25px;
+  --lee-sidebar-breadcrumb-font-size: 15px;
+
+  // =========================
+  // 页签样式 (--lee-sidebar-tab)
+  // =========================
+  --lee-sidebar-tab-margin: 10px 0 0 0;
+
+  // =========================
+  // 内容区域样式 (--lee-sidebar-content)
+  // =========================
+  --lee-sidebar-content-padding: 20px;
+
+  // =========================
+  // 折叠按钮样式 (--lee-sidebar-collapseBtn)
+  // =========================
+  --lee-sidebar-collapseBtn-size: 30px;
+  --lee-sidebar-collapseBtn-top: 30px;
+}

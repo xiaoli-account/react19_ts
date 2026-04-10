@@ -1,0 +1,169 @@
+/** @format */
+
+.profile-container {
+  padding: 24px;
+  background-color: #fff;
+  width: 100%;
+
+  // Target Tabs component through descendant selector
+  .profile-tabs {
+    // Use deep selector to override Ant Design internal classes
+    .ant-tabs-nav {
+      height: auto !important;
+      min-height: 200px !important;
+      padding: 0px;
+    }
+
+    .ant-tabs-nav-wrap {
+      height: auto !important;
+    }
+  }
+
+  .profile-header {
+    margin-bottom: 24px;
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.85);
+      margin-bottom: 12px;
+      line-height: 28px;
+    }
+  }
+
+  .profile-content {
+    display: flex;
+    gap: 64px; // Increased gap as shown in image
+
+    .profile-left {
+      flex: 1;
+      max-width: 440px; // Limit width to match the look
+      min-width: 320px;
+    }
+
+    .profile-right {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 64px; // Separate visually
+
+      .avatar-title {
+        align-self: flex-start;
+        margin-bottom: 12px;
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 14px;
+      }
+
+      .avatar-wrapper {
+        margin-bottom: 24px;
+
+        .ant-avatar {
+          box-shadow: 0 0 10px 1px #c2e4ff88;
+          background-color: #c2e4ff88; // Light blue bg as seen in image
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+
+      .upload-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .security-list {
+    .security-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .security-list-item-content {
+        flex: 1;
+        .security-list-item-title {
+          margin-bottom: 4px;
+          color: rgba(0, 0, 0, 0.88);
+          font-size: 14px;
+          line-height: 1.5715;
+        }
+        .security-list-item-description {
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 14px;
+          line-height: 1.5715;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 992px) {
+  .profile-content {
+    flex-direction: column-reverse;
+    gap: 24px;
+
+    .profile-right {
+      padding-left: 0;
+      align-items: flex-start;
+      margin-bottom: 24px;
+
+      .avatar-wrapper {
+        margin-left: 0;
+      }
+    }
+
+    .profile-left {
+      max-width: 100%;
+    }
+  }
+}
+
+// Dark Mode Adaptation
+[data-theme="dark"] {
+  .profile-container {
+    background-color: #1f1f1f;
+
+    .profile-header {
+      h2 {
+        color: rgba(255, 255, 255, 0.85);
+      }
+    }
+
+    .profile-content {
+      .profile-right {
+        .avatar-title {
+          color: rgba(255, 255, 255, 0.85);
+        }
+
+        .avatar-wrapper {
+          .ant-avatar {
+            box-shadow: 0 0 10px 1px #ffffff;
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+
+    .security-list {
+      .security-list-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        .security-list-item-content {
+          .security-list-item-title {
+            color: rgba(255, 255, 255, 0.85);
+          }
+          .security-list-item-description {
+            color: rgba(255, 255, 255, 0.45);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+/** @format */
+
+// Sidebar 样式
+@use "../styles/index.scss" as *;
+
+.lee-sidebar-layout .layout-sidebar {
+  padding: 0px;
+  position: relative;
+  background-color: var(--lee-sidebar-sidebar-bg);
+  border-color: transparent;
+
+  .layout-logo {
+    height: var(--lee-sidebar-logo-height);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--lee-sidebar-logo-padding);
+    margin-top: var(--lee-sidebar-logo-margin);
+
+    &.collapsed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    span {
+      line-height: 100%;
+    }
+    .logo-icon {
+      width: var(--lee-sidebar-logo-width);
+      height: var(--lee-sidebar-logo-height);
+      will-change: filter;
+      transition: all ease-in-out 300ms;
+      cursor: pointer;
+      animation: logo-spin infinite 10s linear;
+
+      &:hover {
+        filter: drop-shadow(0 0 1em var(--lee-sidebar-logo-bg));
+        // filter: drop-shadow(0 0 2em #61dafbaa);
+      }
+
+      @keyframes logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .logo-text {
+      font-size: var(--lee-sidebar-logo-font-size);
+      font-weight: var(--lee-sidebar-logo-font-weight);
+      color: var(--lee-sidebar-logo-text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+      min-width: 0;
+    }
+  }
+  .layout-menu {
+    border: none;
+    padding: var(--lee-sidebar-sidebar-padding);
+    .ant-menu-submenu {
+      .ant-menu-item {
+        &.ant-menu-item-selected {
+          background-color: var(--lee-sidebar-sidebar-menu-selected-bg);
+        }
+      }
+      &.ant-menu-submenu-selected {
+        background-color: var(--lee-sidebar-sidebar-submenu-selected-bg);
+      }
+    }
+  }
+  .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .sidebar-footer-ul {
+      display: flex;
+      flex-direction: column;
+      .search-item {
+        padding: 0px !important;
+        width: 100%;
+        height: 100%;
+      }
+      .sidebar-item {
+        height: var(--lee-sidebar-sidebar-footer-item-height);
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--lee-sidebar-sidebar-footer-item-padding);
+        cursor: pointer;
+        color: var(--lee-sidebar-sidebar-footer-item-text);
+
+        &.justify-start {
+          justify-content: flex-start;
+          gap: 8px;
+        }
+
+        &:nth-child(even) {
+          border-bottom: 1px solid
+            var(--lee-sidebar-sidebar-footer-item-border-color);
+          border-top: 1px solid
+            var(--lee-sidebar-sidebar-footer-item-border-color);
+        }
+        &:last-child {
+          border-bottom-color: transparent;
+          margin-bottom: 10px;
+        }
+        &:hover {
+          background: var(--lee-sidebar-sidebar-footer-item-hover-bg);
+          border-bottom-color: transparent;
+          border-top-color: transparent;
+        }
+        .sidebar-item-content {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          color: var(--lee-sidebar-sidebar-footer-item-text);
+
+          span {
+            margin-right: 10px;
+            color: var(--lee-sidebar-sidebar-footer-item-text);
+          }
+          .ant-avatar span {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 暗色主题适配
+[data-theme="dark"] {
+  .lee-sidebar-layout .layout-sidebar {
+    background-color: var(--lee-sidebar-sidebar-bg);
+
+    .layout-logo {
+      .logo-icon {
+        &:hover {
+          filter: drop-shadow(0 0 1em var(--lee-sidebar-logo-bg));
+        }
+      }
+    }
+
+    .layout-menu {
+      .ant-menu-item {
+        &.ant-menu-item-selected {
+          color: var(--lee-sidebar-sidebar-menu-selected-text);
+        }
+      }
+      .ant-menu-submenu {
+        &.ant-menu-submenu-selected {
+          color: var(--lee-sidebar-sidebar-menu-selected-text);
+
+          .ant-menu-submenu-title {
+            color: var(--lee-sidebar-sidebar-submenu-selected-text);
+          }
+        }
+      }
+    }
+  }
+}

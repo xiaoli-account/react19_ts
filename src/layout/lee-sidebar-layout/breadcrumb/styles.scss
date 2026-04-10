@@ -1,0 +1,24 @@
+/** @format */
+
+@use "../styles/index.scss" as *;
+
+.lee-sidebar-layout .layout-breadcrumb {
+  height: var(--lee-sidebar-breadcrumb-height);
+  display: flex;
+  align-items: center;
+  background: var(--lee-sidebar-breadcrumb-bg);
+  border-bottom: 1px solid var(--lee-sidebar-breadcrumb-border);
+  transition: all 0.2s;
+  padding: var(--lee-sidebar-breadcrumb-padding);
+  box-shadow: 0 1px 4px var(--lee-sidebar-breadcrumb-shadow);
+  .ant-breadcrumb-link {
+    font-size: var(--lee-sidebar-breadcrumb-font-size);
+  }
+}
+
+// 暗色主题适配
+[data-theme="dark"] {
+  .lee-sidebar-layout .layout-breadcrumb {
+    box-shadow: 0 1px 8px var(--lee-sidebar-breadcrumb-shadow);
+  }
+}

@@ -1,0 +1,41 @@
+{
+  // ==================== 项目知识库配置 ====================
+  "// 项目知识库": "指向项目的 llms.txt 文件，供 AI 工具理解项目",
+  "knowledgeBase": {
+    "primary": "src_ai/ai-knowledge/lee-custom-llms-text/llms.txt",
+    "additional": ["src_ai/ai-knowledge/lee-custom-llms-text/llms.full.txt"]
+  },
+
+  // ==================== AI 工具配置 ====================
+  "// GitHub Copilot": "GitHub Copilot 配置",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "github.copilot.advanced": {
+    "debug.overrideEngine": "gpt-4"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": true,
+
+  "// Codeium": "Codeium AI 配置",
+  "codeium.enableConfig": {
+    "*": true
+  },
+  "codeium.enableCodeLens": true,
+  "codeium.enableSearch": true,
+  "codeium.enableChatMode": true,
+  // ==================== Prettier 配置 ====================
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+
+  // ==================== 路径别名配置 ====================
+  "path-intellisense.mappings": {
+    "@": "${workspaceFolder}/src",
+    "@AI": "${workspaceFolder}/src_ai",
+    "@ai": "${workspaceFolder}/src_ai"
+  }
+}

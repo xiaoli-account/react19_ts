@@ -1,0 +1,12 @@
+/** @format */
+
+@use "./color.scss" as *;
+@use "./size.scss" as *;
+@use "./other.scss" as *;
+
+// 暗色主题变量定义
+.theme-dark {
+  @extend .dark-color-theme;
+  @extend .dark-size-theme;
+  @extend .dark-other-theme;
+}

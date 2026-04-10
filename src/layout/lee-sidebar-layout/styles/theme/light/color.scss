@@ -1,0 +1,90 @@
+/**
+ * Lee Sidebar Layout Light Color Variables
+ * 侧边栏布局亮色主题颜色变量
+ *
+ * @format
+ */
+
+@use "../common/index.scss" as *;
+
+.light-color-theme {
+  // =========================
+  // 主体色 (--lee-sidebar)
+  // =========================
+  --lee-sidebar-content-bg: #fcfcfc; // 内容区域背景色
+  --lee-sidebar-sidebar-bg: #fff; // 侧边栏背景色
+  // =========================
+  // 侧边栏颜色 (--lee-sidebar-sidebar)
+  // =========================
+  --lee-sidebar-sidebar-border-color: #f0f0f0;
+  --lee-sidebar-menu-selected-bg: #e1ecff;
+  --lee-sidebar-submenu-selected-bg: rgba(0, 0, 0, 0.02);
+  --lee-sidebar-menu-selected-text: #ffffff;
+  --lee-sidebar-submenu-selected-text: #0084ff;
+  --lee-sidebar-sidebar-footer-item-text: #333333;
+  --lee-sidebar-sidebar-footer-item-border-color: #eeeeee;
+  --lee-sidebar-sidebar-footer-item-hover-bg: #f5f5f5;
+
+  // =========================
+  // 折叠按钮颜色 (--lee-sidebar-menu-collapse-btn)
+  // =========================
+  --lee-sidebar-menu-collapse-btn-bg: #ffffff;
+  --lee-sidebar-menu-collapse-btn-bg-hover: #f5f5f5;
+  --lee-sidebar-menu-collapse-btn-shadow: rgba(0, 0, 0, 0.15);
+  --lee-sidebar-menu-collapse-btn-hover-shadow: rgba(0, 0, 0, 0.3);
+  --lee-sidebar-menu-collapse-btn-border: #eeeeee;
+  --lee-sidebar-menu-collapse-btn-font: #333333;
+
+  // =========================
+  // 搜索框颜色 (--lee-sidebar-search)
+  // =========================
+  --lee-sidebar-search-bg: #f5f5f5;
+  --lee-sidebar-search-border: #dfdfdf;
+  --lee-sidebar-search-border-hover: #1b77e8;
+
+  // =========================
+  // 面包屑颜色 (--lee-sidebar-breadcrumb)
+  // =========================
+  --lee-sidebar-breadcrumb-bg: #ffffff;
+  --lee-sidebar-breadcrumb-border: transparent;
+  --lee-sidebar-breadcrumb-shadow: rgba(0, 21, 41, 0.18);
+
+  // =========================
+  // 页签样式 (--lee-sidebar-tab)
+  // =========================
+
+  // =========================
+  // 内容区域颜色 (--lee-sidebar-content)
+  // =========================
+
+  // =========================
+  // Logo 颜色 (--lee-sidebar-logo)
+  // =========================
+  --lee-sidebar-logo-bg: #61dafb;
+  --lee-sidebar-logo-text: #444444;
+  // =========================
+  // 通知组件颜色 (--lee-sidebar-notice)
+  // =========================
+  --lee-sidebar-notice-bg: #fff;
+  --lee-sidebar-notice-shadow:
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --lee-sidebar-notice-tab-text: rgba(0, 0, 0, 0.85);
+  --lee-sidebar-notice-tab-text-hover: #40a9ff;
+  --lee-sidebar-notice-tab-text-active: #177ddc;
+  --lee-sidebar-notice-item-border: rgba(5, 5, 5, 0.06);
+  --lee-sidebar-notice-item-hover-bg: #f0f5ff;
+  --lee-sidebar-notice-item-title: rgba(0, 0, 0, 0.85);
+  --lee-sidebar-notice-item-desc: rgba(0, 0, 0, 0.45);
+  --lee-sidebar-notice-item-time: rgba(0, 0, 0, 0.45);
+  --lee-sidebar-notice-action-text: rgba(0, 0, 0, 0.85);
+  --lee-sidebar-notice-action-bg-hover: #f5f5f5;
+  --lee-sidebar-notice-action-border: #f0f0f0;
+
+  // =========================
+  // 搜索框扩展颜色 (--lee-sidebar-search)
+  // =========================
+  --lee-sidebar-search-icon-color: rgba(0, 0, 0, 0.45);
+  --lee-sidebar-search-text-color: rgba(0, 0, 0, 0.88);
+  --lee-sidebar-search-input-text: rgba(0, 0, 0, 0.88);
+}

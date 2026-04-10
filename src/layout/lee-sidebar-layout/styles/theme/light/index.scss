@@ -1,0 +1,12 @@
+/** @format */
+
+@use "./color.scss" as *;
+@use "./size.scss" as *;
+@use "./other.scss" as *;
+
+// 亮色主题变量定义
+.theme-light {
+  @extend .light-color-theme;
+  @extend .light-size-theme;
+  @extend .light-other-theme;
+}
